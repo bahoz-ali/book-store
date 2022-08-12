@@ -7,6 +7,7 @@ const Book = (props) => {
     <section className="book-component">
       <h2>{title}</h2>
       <p>{author}</p>
+      <button type="button">delete</button>
     </section>
   );
 };
