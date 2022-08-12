@@ -1,0 +1,12 @@
+.navigation-section {
+  padding: 1.1rem 2rem;
+  background-color: white;
+  border: 1px solid #424242;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.2rem;
+}
