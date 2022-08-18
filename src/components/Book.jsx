@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Book = (props) => {
-  const { author, title } = props;
+  const { author, title } = props.bookData;
 
   return (
     <section className="book-component">

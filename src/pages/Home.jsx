@@ -1,12 +1,17 @@
 import React from 'react';
 import Book from '../components/Book';
 import FormBook from '../components/FormBook';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+  const books = useSelector((state) => state.books);
+
   return (
     <div>
-      <Book author="xyz" title="Happy life" />
-      <Book author="marvi" title="Try not to cry" />
+      {books.map((book) => {
+        return <Book key={book.id} bookData={book} />;
+      })}
+
       <FormBook />
     </div>
   );
