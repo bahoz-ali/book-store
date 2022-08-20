@@ -1,37 +1,24 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import API from '../../service.js';
+import API from '../../service';
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS';
 
-const initialState = [
-  {
-    title: 'never give up',
-    author: 'bahoz',
-    id: 1,
-  },
-  {
-    title: 'Try it now, Get it later',
-    author: 'Doni kard',
-    id: 2,
-  },
-  {
-    title: 'Thing like a real man',
-    author: 'hilali',
-    id: 3,
-  },
-];
+const initialState = [];
 
 // book reducer
 export default (state = initialState, action) => {
   switch (action.type) {
     case `${FETCH_BOOKS}/fulfilled`:
-      return { ...state, books: [...action.payload] };
+      return [...action.payload];
+
     case `${ADD_BOOK}/fulfilled`:
-      return [...state, action.book];
+      return [...state, action.payload];
+
     case `${REMOVE_BOOK}/fulfilled`:
-      return state.filter((book) => book.id !== action.id);
+      return state.filter((book) => book.item_id !== action.payload);
+
     default:
       return state;
   }
@@ -45,17 +32,20 @@ export const getBooks = createAsyncThunk(FETCH_BOOKS, async () => {
 
   const books = [];
 
+  // eslint-disable-next-line
   for (const key in data) {
-    const { title, author, category } = data[key][0];
+    if (Object.hasOwnProperty.call(data, key)) {
+      const { title, author, category } = data[key][0];
 
-    const book = {
-      item_id: key,
-      title,
-      author,
-      category,
-    };
+      const book = {
+        item_id: key,
+        title,
+        author,
+        category,
+      };
 
-    books.push(book);
+      books.push(book);
+    }
   }
 
   return books;
@@ -72,9 +62,11 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => {
 });
 
 export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => {
-  await fetch(API.booksEndPoint + '/' + id, {
+  const endPoint = `${API.booksEndPoint}/${id}`;
+
+  await fetch(endPoint, {
     method: 'DELETE',
-    body: { item_id: id },
+    body: JSON.stringify({ item_id: id }),
   });
 
   return id;
