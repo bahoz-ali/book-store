@@ -2,6 +2,7 @@ import React from 'react';
 import './book.style.css';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
+import Circle from './Circle';
 
 const Book = (props) => {
   const dispatch = useDispatch();
@@ -23,8 +24,14 @@ const Book = (props) => {
         type="button">
         Delete
       </button>
+
+      <Circle />
     </section>
   );
 };
+
+
+
+
 
 export default Book;

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './header-style.css'
+import './header-style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   return (
@@ -12,6 +14,7 @@ const Header = () => {
               <h1>BOOKSTORE CMS</h1>
             </Link>
           </li>
+
           <li className="nav__item">
             <Link to="/" className="link">
               Books
@@ -24,6 +27,10 @@ const Header = () => {
             </Link>
           </li>
         </ul>
+
+        <div className="profile">
+          <FontAwesomeIcon icon={faUser} style={{color: "var(--clr-primary)"}} />
+        </div>
       </nav>
     </div>
   );
