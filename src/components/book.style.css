@@ -1,12 +1,63 @@
 .book-component {
-  background-color: #a2b0ff;
-  color: aliceblue;
+  background-color: #fff;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-heading);
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin: 1.5rem 0;
-  padding: 1rem;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem 1.2rem;
 }
+
+.book-info__header .book__genre {
+  color: var(--clr-heading);
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.book-info__header .book__title {
+  font-size: 1.4rem;
+  font-family: var(--ff-secondary);
+  color: var(--clr-heading);
+  text-transform: capitalize;
+  margin: 0;
+  padding: 0;
+}
+
+.book-info__header .book__author {
+  font-size: 0.8rem;
+  color: var(--clr-secondary);
+}
+
+.book .book__footer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.6rem;
+}
+
+/* ----- circle ------ */
+.circle-component {
+  display: flex;
+  font-size: 12px;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-component h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.circle-component p {
+  opacity: 0.5;
+}
+
+
+/* ----- components ----- */
 
 .btn {
   outline: none;
@@ -16,7 +67,60 @@
   cursor: pointer;
 }
 
+.btn.btn--secondary {
+  color: var(--clr-primary);
+  font-size: 0.875rem;
+  padding: 0;
+  font-weight: 300;
+  background-color: transparent;
+}
+
 .btn.btn--primary {
+  background-color: var(--clr-primary);
+  min-width: 8rem;
+  text-transform: uppercase;
   color: #fff;
-  background-color: rgba(151, 8, 8, 0.817);
+  font-size: 0.8rem;
+}
+
+.Line {
+  width: 0.125rem;
+  height: 1.5rem;
+  border: solid 1px #e8e8e8;
+}
+
+.Line.small {
+  width: 0.125rem;
+  height: 1.5rem;
+}
+
+.Line.large {
+  width: 0.125rem;
+  height: 4.375rem;
+}
+
+/* ----- book chapter ----- */
+.book-chapter {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  justify-content: space-between;
+}
+
+.book-chapter .btn {
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+
+.current__chapter {
+  color: var(--clr-heading);
+  opacity: 0.5;
+  margin: 0;
+  font-size: 13px;
+}
+
+.chapter__number {
+  font-size: 1rem;
+  color: var(--clr-heading);
+  margin: 0;
 }

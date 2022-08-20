@@ -18,4 +18,5 @@ a {
 
 body {
   font-family: var(--ff-secondary);
+  background-color: #fafafa;
 }
