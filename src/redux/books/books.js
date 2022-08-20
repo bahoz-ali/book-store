@@ -30,23 +30,12 @@ export const getBooks = createAsyncThunk(FETCH_BOOKS, async () => {
   const response = await fetch(API.booksEndPoint);
   const data = await response.json();
 
-  const books = [];
-
-  // eslint-disable-next-line
-  for (const key in data) {
-    if (Object.hasOwnProperty.call(data, key)) {
-      const { title, author, category } = data[key][0];
-
-      const book = {
-        item_id: key,
-        title,
-        author,
-        category,
-      };
-
-      books.push(book);
-    }
-  }
+  const books = Object.keys(data).map((key) => ({
+    item_id: key,
+    title: data[key][0].title,
+    author: data[key][0].author,
+    category: data[key][0].category,
+  }));
 
   return books;
 });
