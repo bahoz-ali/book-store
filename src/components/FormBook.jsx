@@ -26,9 +26,10 @@ const FormBook = () => {
     if (!title.trim() || !author.trim()) return;
 
     const newBook = {
+      item_id: uuidv4(),
       title,
       author,
-      id: uuidv4(),
+      category: 'Sadness',
     };
 
     dispatch(addBook(newBook));
