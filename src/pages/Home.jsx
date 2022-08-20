@@ -19,6 +19,8 @@ const Home = () => {
         return <Book key={book.item_id} bookData={book} />;
       })}
 
+      <div className="line"></div>
+
       <FormBook />
     </div>
   );

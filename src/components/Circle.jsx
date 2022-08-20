@@ -2,11 +2,6 @@ import React from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const style = {
-  display: 'flex',
-  gap: '1rem',
-};
-
 function Circle() {
   const percentage = Math.floor(Math.random() * 101);
 
