@@ -1,5 +1,6 @@
 const ADD = 'bookstore/books/ADD_BOOK';
 const REMOVE = 'bookstore/books/REMOVE_BOOK';
+const FETCH_BOOKS = 'bookstore/books/FETCH_BOOKS'
 
 const initialState = [
   {
@@ -22,9 +23,11 @@ const initialState = [
 // book reducer
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD:
+     case `${FETCH_BOOKS}/fulfilled`:
+      return { ...state, books: [...action.payload] };
+    case `${ADD}/fulfilled`:
       return [...state, action.book];
-    case REMOVE:
+    case `${REMOVE}/fulfilled`:
       return state.filter((book) => book.id !== action.id);
     default:
       return state;
