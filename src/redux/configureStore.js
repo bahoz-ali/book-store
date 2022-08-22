@@ -1,0 +1,20 @@
+import {
+  combineReducers,
+  configureStore,
+} from '@reduxjs/toolkit';
+import { logger } from 'redux-logger';
+import thunk from 'redux-thunk';
+import booksReducer from './books/books';
+import categoriesReducer from './categories/categories';
+
+const rootReducer = combineReducers({
+  books: booksReducer,
+  categories: categoriesReducer,
+});
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: [logger, thunk],
+});
+
+export default store;
