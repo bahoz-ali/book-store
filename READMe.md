@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-- coming soon
+- [Look the project](https://storing-book.netlify.app)
 
 ## Getting Started
 
