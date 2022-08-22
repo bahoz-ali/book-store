@@ -1,0 +1,55 @@
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.18px;
+  color: #888;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  padding-top: 1rem;
+}
+
+.form-body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.8rem;
+}
+
+input {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #d8e6f7;
+  background-color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.15px;
+  color: #121212;
+  width: 33%;
+}
+
+/* ----- components ----- */
+
+.btn {
+  outline: none;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn.btn--secondary {
+  color: var(--clr-primary);
+  font-size: 0.875rem;
+  padding: 0;
+  font-weight: 300;
+  background-color: transparent;
+}
+
+.btn.btn--primary {
+  background-color: var(--clr-primary);
+  min-width: 8rem;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.8rem;
+}

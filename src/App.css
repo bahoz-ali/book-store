@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:root {
+  --clr-primary: #0290ff;
+  --clr-secondary: #4386bf;
+  --clr-border: #e8e8e8;
+  --clr-heading: #121212;
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: roboto, sans-serif;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background-color: #fafafa;
 }

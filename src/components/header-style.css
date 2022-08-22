@@ -1,7 +1,10 @@
 .navigation-section {
-  padding: 1.1rem 2rem;
-  background-color: white;
-  border: 1px solid #424242;
+  padding: 1.1rem 5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 2px #e8e8e8;
 }
 
 .nav-list {
@@ -9,4 +12,29 @@
   align-items: center;
   justify-content: start;
   gap: 1.2rem;
+  font-family: var(--ff-secondary);
+}
+
+.nav-list li:not(:first-child) {
+  color: var(--clr-heading);
+  opacity: 0.5;
+}
+
+.nav-list li h1 {
+  color: var(--clr-primary);
+  font-family: var(--ff-primary);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.profile {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 15px;
+  border: 1px solid #1c1b1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
